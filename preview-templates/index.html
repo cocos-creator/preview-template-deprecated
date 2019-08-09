@@ -1,0 +1,27 @@
+<html>
+<head>
+  <link rel="icon" href="app/editor/static/preview-templates/favicon.ico"></link>
+  <meta charset="utf-8">
+  <title>Cocos Creator | <%=title%></title>
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+  <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="0"></canvas>
+  <div id="splash">
+    <div class="progress-bar stripes">
+      <span style="width: 0%"></span>
+    </div>
+  </div>
+<script src="settings.js" charset="utf-8"></script>
+<script src="modular.js" charset="utf-8"></script>
+<script src="boot.js" charset="utf-8"></script>
+<script src="/socket.io/socket.io.js" charset="utf-8"></script>
+<script src="app/engine/bin/<%=cocos2d%>"</script> charset="utf-8"></script>
+
+<script type="text/javascript">
+(function () {
+    window.__socket_io__ = window.io;
+})();
+</script>
+</body>
+</html>
