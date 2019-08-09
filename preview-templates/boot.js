@@ -17,7 +17,7 @@
         // =======================
         
         // Receives a refresh event from the editor, which triggers the reload of the page
-        var socket = window.__socket_io__();
+        var socket = window.io();
         socket.on('browser:reload', function () {
             window.location.reload();
         });
