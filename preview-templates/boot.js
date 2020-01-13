@@ -3,8 +3,8 @@
 
     var canvas = document.getElementById('GameCanvas');
     window.onload = function () {
-        if (window.__quick_compile__) {
-            window.__quick_compile__.load(onload);
+        if (window.__quick_compile_engine__) {
+            window.__quick_compile_engine__.load(onload);
         }
         else {
             onload();
@@ -43,9 +43,6 @@
         if (_CCSettings.jsBundleForWebPreview) {
             jsList.push(_CCSettings.jsBundleForWebPreview);
         }
-
-        window.__modular.init(_CCSettings.scripts);
-        jsList = jsList.concat(window.__modular.srcs);
 
         var option = {
             id: canvas,
