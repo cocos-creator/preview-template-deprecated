@@ -62,6 +62,7 @@
                 }
                 var scene = sceneAsset.scene;
                 scene._name = sceneAsset._name;
+                cc.assetManager.dependUtil._depends.add(scene._id, cc.assetManager.dependUtil._depends.get('preview-scene.json'));
                 cc.director.runSceneImmediate(scene, function () {
                     // play game
                     cc.game.resume();
