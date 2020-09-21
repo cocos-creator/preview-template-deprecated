@@ -99,7 +99,7 @@
             if (count === bundleRoot.length + 1) {
                 cc.assetManager.loadBundle(MAIN, function (err) {
 					if (!err) cc.game.run(option, onStart);
-				});
+                });
             }
         }
 
