@@ -89,14 +89,17 @@
         });
 
         let { RESOURCES, INTERNAL, MAIN } = cc.AssetManager.BuiltinBundleName;
-        let bundleRoot = [RESOURCES, INTERNAL, MAIN];
+        var bundleRoot = [INTERNAL];
+		_CCSettings.hasResourcesBundle && bundleRoot.push(RESOURCES);
 
         var count = 0;
         function cb (err) {
             if (err) return console.error(err);
             count++;
             if (count === bundleRoot.length + 1) {
-                cc.game.run(option, onStart);
+                cc.assetManager.loadBundle(MAIN, function (err) {
+					if (!err) cc.game.run(option, onStart);
+				});
             }
         }
 
